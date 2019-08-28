@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Objects;
 
 @Service
 public class ProcessoService {
@@ -26,16 +27,24 @@ public class ProcessoService {
         return this.repository.findAll(predicate, pagination);
     }
 
-    public Iterable<Processo> findAllParecerPendente() {
+    public Iterable<Processo> findAllParecerPendente(Long id) {
         QProcesso qProcesso = QProcesso.processo;
         QParecer qParecer = QParecer.parecer;
         JPAQuery<Processo> query = new JPAQuery<Processo>(entityManager);
 
+        if (Objects.nonNull(id)) {
+            return query
+                    .from(qProcesso)
+                    .innerJoin(qProcesso.pareceres ,qParecer)
+                    .where(qParecer.usuario.id.eq(id).and(qParecer.pendente.isTrue()))
+                    .fetch();
+        }
         return query
                 .from(qProcesso)
                 .innerJoin(qProcesso.pareceres ,qParecer)
                 .where(qParecer.pendente.isTrue())
                 .fetch();
+
     }
 
     public Processo insert(Processo responsavel) {

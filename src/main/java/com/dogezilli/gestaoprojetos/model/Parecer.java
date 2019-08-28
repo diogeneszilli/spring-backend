@@ -16,7 +16,8 @@ public class Parecer {
     @GeneratedValue(generator = "parecer_seq", strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "id_usuario")
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
     @NotNull
     private Usuario usuario;
 

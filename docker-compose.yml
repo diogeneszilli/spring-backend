@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  #Postgres
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_DB: "gestaoprocesso"
+      POSTGRES_USER: "gestaoprocesso"
+      POSTGRES_PASSWORD: "gestaoprocesso123"
+    ports:
+      - "25432:5432"

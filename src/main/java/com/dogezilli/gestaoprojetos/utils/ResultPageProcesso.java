@@ -34,8 +34,8 @@ public class ResultPageProcesso {
         return new ResultPageProcesso(records, records_number);
     }
 
-    public static ResultPageProcesso getResultPageParecerPendente(ProcessoService service) {
-        Iterable<Processo> recordsPagination = service.findAllParecerPendente();
+    public static ResultPageProcesso getResultPageParecerPendente(ProcessoService service, Long id) {
+        Iterable<Processo> recordsPagination = service.findAllParecerPendente(id);
         ArrayList<Processo> records = new ArrayList();
         recordsPagination.forEach((item) -> {
             records.add(item);

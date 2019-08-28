@@ -28,10 +28,11 @@ public class ProcessoController {
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
-    @GetMapping("/parecer-pendente")
-    public ResponseEntity<?> findAllParecerPendente(@RequestParam(required = false, defaultValue = "0") Integer page,
-                                     @RequestParam(required = false, defaultValue = "10") Integer size) {
-        ResultPageProcesso result = ResultPageProcesso.getResultPageParecerPendente(service);
+    @GetMapping("/parecer-pendente/{id}")
+    public ResponseEntity<?> findParecerPendente(@PathVariable("id") Long id,
+                                                 @RequestParam(required = false, defaultValue = "0") Integer page,
+                                                 @RequestParam(required = false, defaultValue = "10") Integer size) {
+        ResultPageProcesso result = ResultPageProcesso.getResultPageParecerPendente(service, id);
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
