@@ -21,7 +21,7 @@ public class UsuarioController {
     @Autowired
     UsuarioService service;
 
-    @GetMapping("/find-all")
+    @GetMapping
     public ResponseEntity<?> findAll(@RequestParam(required = false, defaultValue = "0") Integer page,
                                      @RequestParam(required = false, defaultValue = "10") Integer size) {
         ResultPageUsuario result = ResultPageUsuario.getResultPage(page, size, service);

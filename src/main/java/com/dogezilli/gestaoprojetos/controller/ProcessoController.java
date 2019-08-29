@@ -21,7 +21,7 @@ public class ProcessoController {
     @Autowired
     ProcessoService service;
 
-    @GetMapping("/find-all")
+    @GetMapping
     public ResponseEntity<?> findAll(@RequestParam(required = false, defaultValue = "0") Integer page,
                                      @RequestParam(required = false, defaultValue = "10") Integer size) {
         ResultPageProcesso result = ResultPageProcesso.getResultPage(page, size, service);

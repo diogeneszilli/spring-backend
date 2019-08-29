@@ -74,6 +74,13 @@
 			<version>4.2.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.ebaysf.web</groupId>
+			<artifactId>cors-filter</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

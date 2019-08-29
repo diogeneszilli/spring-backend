@@ -22,7 +22,6 @@ public class Parecer {
     private Usuario usuario;
 
     @Column(name = "descricao")
-    @NotNull
     private String descricao;
 
     @Column(name = "pendente")
