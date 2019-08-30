@@ -14,7 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/api/usuarios")
 @Scope(WebApplicationContext.SCOPE_REQUEST)
 public class UsuarioController {
 

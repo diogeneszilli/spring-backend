@@ -14,7 +14,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/processos")
+@RequestMapping("/api/processos")
 @Scope(WebApplicationContext.SCOPE_REQUEST)
 public class ProcessoController {
 
