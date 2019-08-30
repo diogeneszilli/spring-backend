@@ -2,18 +2,28 @@
 
 Back End with Spring Boot.
 
-## Installation
+## Production
 
+[Gestão de Processos](https://gestaoprocesso-api.herokuapp.com)
+
+## Local
+
+Run in your terminal, on the repository directory.
 
 ```bash
-mvn clean install
+sh start.sh
 ```
 
-## Usage
+And use this other project.
 
-```bash
-mvn spring-boot:run
-```
+[Gestão de Processos - Front-End](https://github.com/dogezilli/angularjs-frontend)
+
+## Tools needed to run local
+
+- MAVEN.
+- JAVA 8.
+- DOCKER.
+- DOCKER-COMPOSE.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
