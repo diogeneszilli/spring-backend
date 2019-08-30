@@ -29,7 +29,7 @@ public class ProcessoController {
     }
 
     @GetMapping("/parecer-pendente/{id}")
-    public ResponseEntity<?> findParecerPendente(@PathVariable("id") Long id,
+    public ResponseEntity<?> findParecerPendenteByUserId(@PathVariable("id") Long id,
                                                  @RequestParam(required = false, defaultValue = "0") Integer page,
                                                  @RequestParam(required = false, defaultValue = "10") Integer size) {
         ResultPageProcesso result = ResultPageProcesso.getResultPageParecerPendente(service, id);
